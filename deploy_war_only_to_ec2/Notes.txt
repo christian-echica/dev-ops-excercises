@@ -1,0 +1,2 @@
+Install Add-On "SSH Credentials"
+Make sure the target server has git installed 

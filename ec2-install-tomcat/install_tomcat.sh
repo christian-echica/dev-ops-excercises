@@ -7,6 +7,9 @@ sudo yum update -y
 sudo yum install -y yum-utils
 sudo yum install amazon-linux-extras -y
 
+# Install git
+sudo apt-get install -y git
+
 # Install Java 11
 sudo amazon-linux-extras install java-openjdk11 -y
 
