@@ -1,3 +1,5 @@
 ec2-install-tomcat/.terraform*
 ec2-install-tomcat/devops-dude.pem
 deploy_war_only_to_ec2/devops-dude.pem
+tfInfra_job_docker-git-tomcat/devops-dude.pem 
+tfInfra_job_docker-git-tomcat/.terraform*
