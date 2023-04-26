@@ -1,51 +1,36 @@
-variable "SERVER_NAME" {
-  default = "tomcat-server"
+variable "access_key" {
+        description = "Access key to AWS console"
+}
+variable "secret_key" {
+        description = "Secret key to AWS console"
 }
 
-variable "AWS_ACCESS_KEY_ID" {
-  default = "${var.AWS_ACCESS_KEY_ID}"
+
+variable "instance_name" {
+        description = "Name of the instance to be created"
+        default = "tomcat-server"
 }
 
-variable "AWS_SECRET_ACCESS_KEY" {
-  default = "${var.AWS_SECRET_ACCESS_KEY}"
+variable "instance_type" {
+        default = "t2.medium"
 }
 
-variable "AWS_REGION" {
-  default = "us-east-1"
+variable "subnet_id" {
+        description = "The VPC subnet the instance(s) will be created in"
+        default = "subnet-08f83d21dc8b1859b"
 }
 
-variable "AWS_INSTANCE_TYPE" {
-  default = "t2.medium"
+variable "ami_id" {
+        description = "The AMI to use"
+        default = "ami-03c7d01cf4dedc891"
 }
 
-variable "AWS_VOLUME_SIZE" {
-  default = 8
+variable "number_of_instances" {
+        description = "number of instances to be created"
+        default = 1
 }
 
-variable "AWS_VOLUME_TYPE" {
-  default = "gp2"
-}
 
-variable "AWS_VOLUME_DEVICE" {
-  default = "/dev/xvda"
-}
-
-variable "AWS_AMI_ID" {
-  default = "ami-03c7d01cf4dedc891"
-}
-
-variable "KEY_PAIR" {
-  default = "devops-dude"
-}
-
-variable "SUBNET_ID" {
-  default = "subnet-08f83d21dc8b1859b"
-}
-
-variable "SECURITY_GROUP" {
-  default = "sg-09b86e8974d3c9b9e"
-}
-
-variable "instance_ip" {
-  description = "Public IP address of the EC2 instance"
+variable "ami_key_pair_name" {
+        default = "devops-dude"
 }

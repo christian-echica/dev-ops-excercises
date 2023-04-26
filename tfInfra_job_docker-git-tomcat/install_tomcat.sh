@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 
 # Update the system
 sudo yum update -y
@@ -76,3 +77,4 @@ exit 0
 # Start and Enable the tomcat service
 sudo systemctl daemon-reload
 sudo systemctl enable --now tomcat
+sudo systemctl start tomcat
