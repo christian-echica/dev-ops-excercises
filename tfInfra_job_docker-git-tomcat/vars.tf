@@ -3,11 +3,11 @@ variable "SERVER_NAME" {
 }
 
 variable "AWS_ACCESS_KEY_ID" {
-  default = "AKIAW635LUPZ6PPG2D53"
+  default = "${var.AWS_ACCESS_KEY_ID}"
 }
 
 variable "AWS_SECRET_ACCESS_KEY" {
-  default = "9AbxskNd+8BKdfCgBAvENRnEPXQ6TIbqdkDwEFyn"
+  default = "${var.AWS_SECRET_ACCESS_KEY}"
 }
 
 variable "AWS_REGION" {
