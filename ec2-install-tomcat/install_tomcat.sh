@@ -8,7 +8,7 @@ sudo yum install -y yum-utils
 sudo yum install amazon-linux-extras -y
 
 # Install git
-sudo apt-get install -y git
+sudo yum install -y git
 
 # Install Java 11
 sudo amazon-linux-extras install java-openjdk11 -y
@@ -52,6 +52,14 @@ sudo cp /tmp/host-manager-context.xml /opt/tomcat/webapps/host-manager/META-INF/
 
 # Copy host-manager-server.xml to /opt/tomcat/conf/server.xml
 sudo cp /tmp/host-manager-server.xml /opt/tomcat/conf/server.xml
+
+# Change all permissions for /opt
+sudo chmod -R a+rwX /opt
+
+# Add ec2-user as admin for later use
+USERNAME="ec2-user"
+sudo sh -c "echo '$USERNAME ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers"
+exit 0
 
 # Start and Enable the tomcat service
 sudo systemctl daemon-reload
