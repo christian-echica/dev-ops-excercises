@@ -1,0 +1,19 @@
+<Context version="1.0" encoding="UTF-8">
+  <CookieProcessor className="org.apache.tomcat.util.http.Rfc6265CookieProcessor"
+                   sameSiteCookies="strict" />
+  <Valve className="org.apache.catalina.valves.RemoteAddrValve"
+         allow="^.*$"/>
+
+      <SecurityConstraint>
+        <web-resource-collection>
+        <web-resource-name>Manager UI</web-resource-name>
+        <url-pattern>/manager/*</url-pattern>
+        <http-method>GET</http-method>
+        <http-method>POST</http-method>
+        </web-resource-collection>
+        <auth-constraint>
+        <role-name>manager-gui</role-name>
+        </auth-constraint>
+    </SecurityConstraint>     
+  <Manager sessionAttributeValueClassNameFilter="java\.lang\.(?:Boolean|Integer|Long|Number|String)|org\.apache\.catalina\.filters\.CsrfPreventionFilter\$LruCache(?:\$1)?|java\.util\.(?:Linked)?HashMap"/>
+</Context>
