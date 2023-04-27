@@ -21,6 +21,9 @@ sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-
 sudo chmod +x /usr/local/bin/docker-compose
 
 
+BEFORE RUN: YOU NEED TO CREATE THIS FILE IN THIS CASE!
+/root/temp/inlog.log
+
 How to run and show with the logs? 
 docker-compose up -d --no-color && docker-compose logs -f
 
