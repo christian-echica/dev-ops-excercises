@@ -12,7 +12,7 @@ resource "null_resource" "copy_script" {
     type        = "ssh"
     host        = var.instance_ip
     user        = "ec2-user"
-    private_key = file("${path.module}/devops-dude.pem")
+    private_key = file("/home/sagemaker/keypair-central/devops-dude.pem")
   }
 
   # Copy the install_tomcat.sh script to the instance
@@ -61,7 +61,7 @@ resource "null_resource" "copy_script" {
       type        = "ssh"
       host        = var.instance_ip
       user        = "ec2-user"
-      private_key = file("${path.module}/devops-dude.pem")
+      private_key = file("/home/sagemaker/keypair-central/devops-dude.pem")
     }
     on_failure = continue
   }
@@ -76,7 +76,7 @@ resource "null_resource" "copy_script" {
       type        = "ssh"
       host        = var.instance_ip
       user        = "ec2-user"
-      private_key = file("${path.module}/devops-dude.pem")
+      private_key = file("/home/sagemaker/keypair-central/devops-dude.pem")
     }
   }
 }
