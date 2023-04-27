@@ -1,24 +1,16 @@
-You need to make sure the target EC2 has docker and docker-compose installed.
-
-Steps:
 #!/bin/bash
 
 # Update package lists
-sudo apt-get update
+sudo yum update -y
 
 # Install dependencies
-sudo apt-get install -y apt-transport-https ca-certificates curl gnupg lsb-release
+sudo yum install -y docker git
 
-# Add Docker GPG key
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+# Start Docker service
+sudo service docker start
 
-# Add Docker repository
-echo "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
-$(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-
-# Install Docker
-sudo apt-get update
-sudo apt-get install -y docker-ce docker-ce-cli containerd.io
+# Change permission 
+sudo chmod 777 -R /var/run/docker.sock
 
 # Add current user to docker group
 sudo usermod -aG docker $USER
@@ -27,3 +19,14 @@ sudo usermod -aG docker $USER
 sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" \
 -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
+
+
+How to run and show with the logs? 
+docker-compose up -d --no-color && docker-compose logs -f
+
+### How to verify? #####
+After the application starts, navigate to below links in your web browser:
+
+* Elasticsearch: [`http://localhost:9200`](http://localhost:9200)
+* Logstash: [`http://localhost:9600`](http://localhost:9600)
+* Kibana: [`http://localhost:5601/api/status`](http://localhost:5601/api/status)
