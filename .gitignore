@@ -6,4 +6,4 @@ tfInfra_job_docker-git-tomcat/.terraform/*
 tfInfra_job_docker-git-tomcat/terraform.tfvars
 ec2-install-jenkins/.terraform*
 ec2-install-docker/.terraform*
-
+ec2-ansible-cluster/.terraform*
