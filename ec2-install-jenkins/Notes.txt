@@ -1,0 +1,14 @@
+# Make sure Java is installed too 
+java -version
+
+Note: DO not use Amazon Linux 2023 as amazon extras not available 
+
+# How to know java home?
+java -XshowSettings:properties -version 2>&1 > /dev/null | grep 'java.home'
+Output: java.home = /usr/lib/jvm/java-11-openjdk-11.0.18.0.10-1.amzn2.0.1.x86_64
+
+Install Java and Tomcat 10? 
+https://techviewleo.com/how-to-install-apache-tomcat-on-rhel-centos/
+Java 11 - sudo yum install java-11-openjdk java-11-openjdk-devel -y
+Java 8 - sudo yum install java-1.8.0-openjdk java-1.8.0-openjdk-devel -y 
+

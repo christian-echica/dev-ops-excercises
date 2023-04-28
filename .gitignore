@@ -1,0 +1,12 @@
+ec2-install-tomcat/.terraform*
+ec2-install-tomcat/devops-dude.pem
+deploy_war_only_to_ec2/devops-dude.pem
+tfInfra_job_docker-git-tomcat/devops-dude.pem 
+tfInfra_job_docker-git-tomcat/.terraform/*
+tfInfra_job_docker-git-tomcat/terraform.tfvars
+ec2-install-jenkins/.terraform*
+ec2-install-docker/.terraform*
+ec2-ansible-cluster/.terraform*
+ec2-ansible-cluster/terraform*
+3-tier/.terraform*
+3-tier/terraform*
