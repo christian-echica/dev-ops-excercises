@@ -78,3 +78,7 @@ exit 0
 sudo systemctl daemon-reload
 sudo systemctl enable --now tomcat
 sudo systemctl start tomcat
+
+# Install for jar
+sudo yum install java-1.8.0-openjdk-devel -y
+
