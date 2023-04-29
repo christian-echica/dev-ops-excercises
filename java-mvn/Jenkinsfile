@@ -1,24 +1,40 @@
 pipeline {
     agent any
+    parameters {
+        string(name: 'TOMCAT_IP', defaultValue: '', description: 'IP address of the Tomcat server')
+    }
     environment {
-        PATH = "/opt/apache-maven-3.6.3/bin:$PATH"
+        PATH = "/usr/bin:$PATH"
     }
     stages {
-        stage("clone code"){
-            steps{
-               git credentialsId: 'git_credentials', url: 'https://github.com/ravdy/hello-world.git'
+        stage("clone-from-git"){
+            steps {
+                git branch: 'main', url: 'https://github.com/christian-echica/dev-ops-excercises.git'
             }
         }
-        stage("build code"){
-            steps{
-              sh "mvn clean install"
+        stage("build"){
+            when {
+                expression { fileExists("java-mvn/webapp/pom.xml") }
+            }
+            steps {
+                sh "cd java-mvn/webapp && mvn clean install"
             }
         }
-        stage("deploy"){
-            steps{
-              sshagent(['deploy_user']) {
-                 sh "scp -o StrictHostKeyChecking=no webapp/target/webapp.war ec2-user@13.229.183.126:/opt/apache-tomcat-8.5.55/webapps"
-                 
+        stage("deploy-to-tomcat"){
+            when {
+                expression { params.TOMCAT_IP != '' }
+            }
+            steps {
+                withCredentials([sshUserPrivateKey(credentialsId: 'SSH_CREDENTIALS', keyFileVariable: 'SSH_KEY', passphraseVariable: 'SSH_PASSPHRASE', usernameVariable: 'SSH_USER')]) {
+                    script {
+                        def remoteDir = '/opt/tomcat/webapps'
+                        def localWar = 'java-mvn/webapp/target/webapp.war'
+                        sshagent(['SSH_CREDENTIALS']) {
+                            sh "ssh -o StrictHostKeyChecking=no ${SSH_USER}@${params.TOMCAT_IP} 'sudo systemctl stop tomcat'"
+                            sh "scp -o StrictHostKeyChecking=no ${localWar} ${SSH_USER}@${params.TOMCAT_IP}:${remoteDir}"
+                            sh "ssh -o StrictHostKeyChecking=no ${SSH_USER}@${params.TOMCAT_IP} 'sudo systemctl start tomcat'"
+                        }
+                    }
                 }
             }
         }
