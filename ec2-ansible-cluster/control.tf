@@ -1,23 +1,21 @@
-provider "aws" {
-  region = "us-east-1"
-  shared_credentials_file = "/home/sagemaker/.aws/credentials"
-  profile = "default"
-}
+resource "aws_instance" "ec2_instance_control" {
+  ami = "${var.ami_id_control}"
+  count = "${var.number_of_instances_control}"
+  subnet_id = "${var.subnet_id_control}"
+  instance_type = "${var.instance_type_control}"
+  key_name = "devops-acloud"
 
-resource "aws_instance" "ec2_instance" {
-  ami = "${var.ami_id}"
-  count = "${var.number_of_instances}"
-  subnet_id = "${var.subnet_id}"
-  instance_type = "${var.instance_type}"
-  key_name = "devops-dude"
+   tags = {
+    Name = "control-node"
+    Environment = "dev"
+  } 
 
   connection {
     type = "ssh"
     user = "ec2-user"
-    # private_key = file("${path.module}/devops-dude.pem")
-    private_key = file("/home/sagemaker/keypair-central/devops-dude.pem")
+    private_key = file("/home/sagemaker/keypair-central/devops-acloud.pem")
     timeout = "2m"
-    host = aws_instance.ec2_instance[count.index].public_ip
+    host = aws_instance.ec2_instance_control[count.index].public_ip
   }
 
   provisioner "remote-exec" {
@@ -35,10 +33,13 @@ resource "aws_instance" "ec2_instance" {
       "sudo yum install -y openssh-server",
       "sudo systemctl enable sshd",
       "sudo systemctl start sshd",
+      # Inventory will be /home/ec2-user/inventory
       "cat > inventory <<EOF\n[control]\nlocalhost ansible_connection=local\nEOF",
       "cat > ansible.cfg <<EOF\n[defaults]\ninventory = ./inventory\nEOF",
       "sudo mkdir -p ~/.ssh",
-      "ssh-keygen -t rsa -q -N '' -f ~/.ssh/id_rsa"
+      "ssh-keygen -t rsa -q -N '' -f ~/.ssh/id_rsa",
+      "echo 'Newly generated keygen: '",
+      "cat ~/.ssh/id_rsa.pub"      
     ]
   }
 }
