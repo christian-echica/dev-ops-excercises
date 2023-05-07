@@ -1,8 +1,3 @@
-content_assist_proposals_background=255,255,255
-content_assist_proposals_foreground=0,0,0
-eclipse.preferences.version=1
-org.eclipse.jdt.ui.formatterprofiles.version=23
-spelling_locale_initialized=true
-typefilter_migrated_2=true
-useAnnotationsPrefPage=true
-useQuickDiffPrefPage=true
+version https://git-lfs.github.com/spec/v1
+oid sha256:9a99e393af2d0ced44a86f4941df889779f2dc4aeb59b54aaa5f8a26ca7968f4
+size 282

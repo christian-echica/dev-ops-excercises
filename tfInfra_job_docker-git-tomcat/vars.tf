@@ -1,25 +1,3 @@
-variable "instance_name" {
-        description = "Name of the instance to be created"
-        default = "tomcat-server"
-}
-
-variable "instance_type" {
-        default = "t2.micro"
-}
-
-variable "subnet_id" {
-        description = "The VPC subnet the instance(s) will be created in"
-        default = "subnet-08f83d21dc8b1859b"
-}
-
-variable "ami_id" {
-        description = "The AMI to use"
-        default = "ami-03c7d01cf4dedc891"
-}
-
-variable "number_of_instances" {
-        description = "number of instances to be created"
-        default = 1
-}
-
-
+version https://git-lfs.github.com/spec/v1
+oid sha256:7526063497abad760614e07cd6a67c1ffffdec8725ef6e6bb7aabcba20c91060
+size 546

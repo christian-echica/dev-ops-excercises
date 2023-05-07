@@ -1,33 +1,3 @@
-package com.example;
-
-import org.junit.Before;
-import org.junit.Test;
-
-import static org.hamcrest.CoreMatchers.is;
-import static org.hamcrest.Matchers.greaterThan;
-import static org.junit.Assert.assertThat;
-import static org.junit.matchers.JUnitMatchers.containsString;
-
-public class TestGreeter {
-
-  private Greeter greeter;
-
-  @Before
-  public void setup() {
-    greeter = new Greeter();
-  }
-
-  @Test
-  public void greetShouldIncludeTheOneBeingGreeted() {
-    String someone = "World";
-
-    assertThat(greeter.greet(someone), containsString(someone));
-  }
-
-  @Test
-  public void greetShouldIncludeGreetingPhrase() {
-    String someone = "World";
-
-    assertThat(greeter.greet(someone).length(), is(greaterThan(someone.length())));
-  }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:a93d39e69bb534611b526f5d8ccf5153a394c3afb1e2ae1199713329efc77e6d
+size 739

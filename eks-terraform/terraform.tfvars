@@ -1,10 +1,3 @@
-region = "us-east-1"
-availability_zones_count = 2
-
-project = "DevOps_Capstone"
-
-# vpc_cidr = "10.0.0.0/16"
-# can also later do this 10.0.2.0/24
-vpc_cidr = "10.0.0.0/16"
-subnet_cidr_bits = 8
-
+version https://git-lfs.github.com/spec/v1
+oid sha256:2fbc2e5779af2f7e709590437f499712eb4cf3f8c21c7ebaa4d40f9ee849b27e
+size 201

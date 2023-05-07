@@ -1,6 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<workingSetManager>
-<workingSet editPageId="org.eclipse.jdt.internal.ui.DynamicSourcesWorkingSet" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1682678274700_0" label="Java Main Sources" name="Java Main Sources"/>
-<workingSet editPageId="org.eclipse.jdt.internal.ui.DynamicSourcesWorkingSet" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1682678274718_1" label="Java Test Sources" name="Java Test Sources"/>
-<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1682678276143_2" label="Window Working Set" name="Aggregate for window 1682678276143"/>
-</workingSetManager>
+version https://git-lfs.github.com/spec/v1
+oid sha256:a6b7165b77780d7321d11d16728edc5430342018a18df4728459658ba6ba9040
+size 666

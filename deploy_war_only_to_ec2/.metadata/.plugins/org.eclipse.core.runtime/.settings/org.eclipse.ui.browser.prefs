@@ -1,2 +1,3 @@
-browsers=<?xml version\="1.0" encoding\="UTF-8"?>\n<web-browsers current\="0">\n<system/>\n<external location\="/usr/bin/firefox" name\="Firefox"/>\n</web-browsers>
-eclipse.preferences.version=1
+version https://git-lfs.github.com/spec/v1
+oid sha256:5e8b566ecfa9cfe23e4d0509afbb53e2bdcc4981d1ee8066d9708d8f1a0711e4
+size 195

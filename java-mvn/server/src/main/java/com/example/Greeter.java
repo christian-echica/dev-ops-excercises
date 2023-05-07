@@ -1,19 +1,3 @@
-package com.example;
-
-/**
- * This is a class.
- */
-public class Greeter {
-
-  /**
-   * This is a constructor.
-   */
-  public Greeter() {
-
-  }
-
-  //TODO: Add javadoc comment
-  public String greet(String someone) {
-    return String.format("Hello, %s!", someone);
-  }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:b87616187c78c93c46c1ca21a4995f0e003bd704425d7d27cd95c68e64f53241
+size 266

@@ -1,5 +1,3 @@
-# Export your AWS creds to your local os 
-export AWS_ACCESS_KEY_ID=ACCESS_KEY
-export AWS_SECRET_ACCESS_KEY=SECRET_KEY
-
-
+version https://git-lfs.github.com/spec/v1
+oid sha256:f2b9c04aad46dd327d3ec0d0530c5c5b5a480a5ca7c2550c367baf0e6b9a9d9e
+size 120

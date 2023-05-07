@@ -1,12 +1,3 @@
-ec2-install-tomcat/.terraform*
-ec2-install-tomcat/devops-dude.pem
-deploy_war_only_to_ec2/devops-dude.pem
-tfInfra_job_docker-git-tomcat/devops-dude.pem 
-tfInfra_job_docker-git-tomcat/.terraform/*
-tfInfra_job_docker-git-tomcat/terraform.tfvars
-ec2-install-jenkins/.terraform*
-ec2-install-docker/.terraform*
-ec2-ansible-cluster/.terraform*
-ec2-ansible-cluster/terraform*
-3-tier/.terraform*
-3-tier/terraform*
+version https://git-lfs.github.com/spec/v1
+oid sha256:bfa952103c2d28e6b7977cfa800c4c0e1b5b5128171ac2910a4564104187467f
+size 404

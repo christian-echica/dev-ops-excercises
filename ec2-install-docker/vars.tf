@@ -1,5 +1,3 @@
-variable "instance_ip" {
-  description = "The public IP address of the EC2 instance"
-  type        = string
-  default     = "54.81.17.231"
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:e19da014fd5d13b85437dcd89964cbed258441dd290a1344d96104f3ea07ccea
+size 141

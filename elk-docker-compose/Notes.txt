@@ -1,35 +1,3 @@
-#!/bin/bash
-
-# Update package lists
-sudo yum update -y
-
-# Install dependencies
-sudo yum install -y docker git
-
-# Start Docker service
-sudo service docker start
-
-# Change permission 
-sudo chmod 777 -R /var/run/docker.sock
-
-# Add current user to docker group
-sudo usermod -aG docker $USER
-
-# Install Docker Compose
-sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" \
--o /usr/local/bin/docker-compose
-sudo chmod +x /usr/local/bin/docker-compose
-
-
-BEFORE RUN: YOU NEED TO CREATE THIS FILE IN THIS CASE!
-/root/temp/inlog.log
-
-How to run and show with the logs? 
-docker-compose up -d --no-color && docker-compose logs -f
-
-### How to verify? #####
-After the application starts, navigate to below links in your web browser:
-
-* Elasticsearch: [`http://localhost:9200`](http://localhost:9200)
-* Logstash: [`http://localhost:9600`](http://localhost:9600)
-* Kibana: [`http://localhost:5601/api/status`](http://localhost:5601/api/status)
+version https://git-lfs.github.com/spec/v1
+oid sha256:ae17cbce88844f3dd23d5aaaad05780e621b74855d37c89ce2023cdf6c6b694e
+size 987

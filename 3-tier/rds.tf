@@ -1,22 +1,3 @@
-resource "aws_db_instance" "default" {
-  allocated_storage      = 10
-  db_subnet_group_name   = aws_db_subnet_group.default.id
-  engine                 = "mysql"
-  engine_version         = "8.0.23"
-  instance_class         = "db.t2.micro"
-  multi_az               = true
-  name                   = "mydb"
-  username               = "username"
-  password               = "password"
-  skip_final_snapshot    = true
-  vpc_security_group_ids = [aws_security_group.database-sg.id]
-}
-
-resource "aws_db_subnet_group" "default" {
-  name       = "main"
-  subnet_ids = [aws_subnet.database-subnet-1.id, aws_subnet.database-subnet-2.id]
-
-  tags = {
-    Name = "My DB subnet group"
-  }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:ea3ce50256cfc0927caccd9f45619bb0cc7c7fed6990788e77ec14fa1b12fbb5
+size 675

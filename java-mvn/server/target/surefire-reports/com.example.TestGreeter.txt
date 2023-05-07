@@ -1,4 +1,3 @@
--------------------------------------------------------------------------------
-Test set: com.example.TestGreeter
--------------------------------------------------------------------------------
-Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.056 sec
+version https://git-lfs.github.com/spec/v1
+oid sha256:41ffcab84affb9a4ab88f033acf21f4b2681229bf329ddd66ad49980c4801341
+size 268

@@ -1,14 +1,3 @@
-const http = require('http');
-
-const hostname = '0.0.0.0';
-const port = 3000;
-
-const server = http.createServer((req, res) => {
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/plain');
-  res.end('Hello, World! Welcome to NodeJS Application \n');
-});
-
-server.listen(port, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}/`);
-});
+version https://git-lfs.github.com/spec/v1
+oid sha256:1efe2d6584707ea0d700624283a1c9811dec5cc637023a079cb974cae509c6df
+size 371
